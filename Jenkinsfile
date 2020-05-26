@@ -11,13 +11,13 @@ pipeline {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'hardik_build_python'
+                        build job: 'Docker-Slave-Rahul-Test-1'
                     }
                 }
                 stage('Test On Linux') {
                     steps {
                         echo "steps" 
-                        sleep(time:50,unit:"SECONDS")
+                        //sleep(time:50,unit:"SECONDS")
                         println "running in linux test"
                         build job: 'hardik_build_python'                       
                     }
