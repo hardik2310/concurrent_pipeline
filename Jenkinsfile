@@ -18,7 +18,7 @@ pipeline {
                     steps {
                         echo "steps"
                         println "running in linux test" 
-                        sleep(time:1,unit:"SECONDS")
+                        sleep(time:5,unit:"SECONDS")
                         build job: 'hardik_build_python'                       
                     }
                 }
