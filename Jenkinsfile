@@ -8,7 +8,6 @@ pipeline {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
-                    agent any
                     steps {
                         echo "steps"
                         println "running in windows test"
@@ -16,7 +15,6 @@ pipeline {
                     }
                 }
                 stage('Test On Linux') {
-                    agent any
                     steps {
                         echo "steps"
                          println "running in linux test"                   
