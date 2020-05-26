@@ -8,18 +8,26 @@ pipeline {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
-                    agent none
+                    agent any
                     steps {
                         echo "steps"
-                        println "for run test"
-                    }
-                
-                    post {
-                        always {
-                            echo "always run for windows"
+                        println "running in windows test"
+                        node {
+                             def job = build job: 'hardik_build_python'
                         }
                     }
                 }
+                stage('Test On Linux') {
+                    agent any
+                    steps {
+                        echo "steps"
+                         println "running in linux test"
+                         node {
+                             def job = build job: 'hardik_build_python'
+                        }
+                    }
+                }
+                
             }
         }
    }
