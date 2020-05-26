@@ -4,7 +4,7 @@ pipeline {
         USE_JDK = 'true'
         ABC = 'environment variable ABC'
     }
-   stages {
+    stages {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
@@ -17,24 +17,23 @@ pipeline {
                 stage('Test On Linux') {
                     steps {
                         echo "steps"
-                         println "running in linux test"                   
-                         build job: 'hardik_build_python'                       
+                        println "running in linux test"                   
+                        build job: 'hardik_build_python'                       
                     }
                 }
-                
             }
         }
-   }
-   stage('con-current1') {
-        steps {
-            echo 'Building con-current 1..'
-           build job: 'hardik_build_python'     
+        stage('con-current1') {
+            steps {
+                echo 'Building con-current 1..'
+                build job: 'hardik_build_python'     
+            }
         }
-    }
-     stage('con-current2') {
-        steps {
-            echo 'Building con-current 2..'
-           build job: 'hardik_build_python'     
+        stage('con-current2') {
+            steps {
+                echo 'Building con-current 2..'
+                build job: 'hardik_build_python'     
+            }
         }
     }
 }
