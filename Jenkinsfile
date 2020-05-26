@@ -5,13 +5,13 @@ pipeline {
         ABC = 'environment variable ABC'
     }
      parallel (
-                    { build("hardik_build_python") },
-                    { build("hardik_build_python") },
-                    { build("hardik_build_python") }
-               )
-    stages {
+                { build("hardik_build_python") },
+                { build("hardik_build_python") },
+                { build("hardik_build_python") }
+     )
+    /*stages {
         stage('Run Tests') {
-            /*
+           
             parallel {
                 stage('Test On Windows') {
                     steps {
@@ -28,9 +28,9 @@ pipeline {
                         build job: 'hardik_build_python'                       
                     }
                 }
-            }*/
+            }
         }
-        /*
+        
         stage('con-current1') {
             steps {
                 echo 'Building con-current 1..'
