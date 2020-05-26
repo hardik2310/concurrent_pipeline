@@ -17,7 +17,8 @@ pipeline {
                 stage('Test On Linux') {
                     steps {
                         echo "steps"
-                        println "running in linux test"                   
+                        println "running in linux test" 
+                        sleep(time:1,unit:"SECONDS")
                         build job: 'hardik_build_python'                       
                     }
                 }
