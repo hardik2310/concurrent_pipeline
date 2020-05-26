@@ -15,7 +15,7 @@ pipeline {
                         build job: 'hardik_build_python'
                     }
                 }
-                stage('hardik build python 1') {
+                stage('hardik build python 2') {
                     steps {
                         echo "steps" 
                         //sleep(time:50,unit:"SECONDS")
