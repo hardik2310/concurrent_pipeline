@@ -23,32 +23,32 @@ pipeline {
                         build job: 'hardik_build_python'                       
                     }
                 }
-                stage('rahul job 1') {
+                stage('docker job 1') {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'Docker-Slave-Rahul-Test-1'
+                        build job: 'hardik-docker-1'
                     }
                 }
-                stage('rahul job 2') {
+                stage('docker job 2') {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'Docker-Slave-Rahul-Test-2'
+                        build job: 'hardik-docker-2'
                     }
                 }
-                stage('rahul job 3') {
+                stage('docker job 3') {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'Docker-Slave-Rahul-Test-3'
+                        build job: 'hardik-docker-3'
                     }
                 }
-                stage('rahul job 4') {
+                stage('docker job 4') {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'Docker-Slave-Rahul-Test-4'
+                        build job: 'hardik-docker-4'
                     }
                 }
             }
