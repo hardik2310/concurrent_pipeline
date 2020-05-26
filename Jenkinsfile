@@ -4,14 +4,13 @@ pipeline {
         USE_JDK = 'true'
         ABC = 'environment variable ABC'
     }
+     parallel (
+                    { build("hardik_build_python") },
+                    { build("hardik_build_python") },
+                    { build("hardik_build_python") }
+               )
     stages {
         stage('Run Tests') {
-            parallel (
-                // job 1, 2 and 3 will be scheduled in parallel.
-                { build("hardik_build_python") },
-                { build("hardik_build_python") },
-                { build("hardik_build_python") }
-            )
             /*
             parallel {
                 stage('Test On Windows') {
