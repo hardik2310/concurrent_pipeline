@@ -24,6 +24,7 @@ pipeline {
                 }
             }
         }
+        /*
         stage('con-current1') {
             steps {
                 echo 'Building con-current 1..'
@@ -35,6 +36,6 @@ pipeline {
                 echo 'Building con-current 2..'
                 build job: 'hardik_build_python'     
             }
-        }
+        }*/
     }
 }
