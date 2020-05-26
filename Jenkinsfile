@@ -6,12 +6,19 @@ pipeline {
     }
     stages {
         stage('Run Tests') {
+            parallel (
+                // job 1, 2 and 3 will be scheduled in parallel.
+                { build("hardik_build_python") },
+                { build("hardik_build_python") },
+                { build("hardik_build_python") }
+            )
+            /*
             parallel {
                 stage('Test On Windows') {
                     steps {
                         echo "steps"
                         println "running in windows test"
-                        build job: 'Docker-Slave-Rahul-Test-1'
+                        build job: 'hardik_build_python'
                     }
                 }
                 stage('Test On Linux') {
@@ -22,7 +29,7 @@ pipeline {
                         build job: 'hardik_build_python'                       
                     }
                 }
-            }
+            }*/
         }
         /*
         stage('con-current1') {
