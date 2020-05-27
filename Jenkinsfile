@@ -15,14 +15,7 @@ pipeline {
                         build job: 'hardik_build_python'
                     }
                 }
-                stage('hardik build python 2') {
-                    steps {
-                        echo "steps" 
-                        //sleep(time:50,unit:"SECONDS")
-                        println "running in linux test"
-                        build job: 'hardik_build_python'                       
-                    }
-                }
+               
                 stage('docker job 1') {
                     steps {
                         echo "steps"
@@ -49,6 +42,20 @@ pipeline {
                         echo "steps"
                         println "running in windows test"
                         build job: 'hardik-docker-4'
+                    }
+                }
+                stage('docker job 5') {
+                    steps {
+                        echo "steps"
+                        println "running in windows test"
+                        build job: 'hardik-docker-5'
+                    }
+                }
+                stage('docker job 6') {
+                    steps {
+                        echo "steps"
+                        println "running in windows test"
+                        build job: 'hardik-docker-6'
                     }
                 }
             }
