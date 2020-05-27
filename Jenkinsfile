@@ -1,5 +1,4 @@
 pipeline {
-    agent any
     environment {
         USE_JDK = 'true'
         ABC = 'environment variable ABC'
